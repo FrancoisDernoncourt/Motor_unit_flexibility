@@ -1,2 +1,4 @@
 # Motor_unit_flexibility
-Scripts used for the paper 'Flexible Control of Motor Units: Is the Multidimensionality of Motor Unit Manifolds a Sufficient Condition?' (https://www.biorxiv.org/content/10.1101/2024.07.23.604408v1) 
+Scripts used for the paper 'Flexible Control of Motor Units: Is the Multidimensionality of Motor Unit Manifolds a Sufficient Condition?' (https://www.biorxiv.org/content/10.1101/2024.07.23.604408v1)
+
+The scripts in the "Analyses" folder represent the final versions from an iterative and exploratory analyzis process. While these scripts were indeed used to generate the results presented in the publication, please note that they may be somewhat challenging to work with. Some portions of the code reflect earlier stages of development or specific analyses that were ultimately unnecessary for the final results. However, these legacy features remain integrated into the script logic. We apologize for any inconvenience this may cause. If you encounter any issues or need assistance, please feel free to contact the author at francois.dernoncourt@univ-cotedazur.fr.

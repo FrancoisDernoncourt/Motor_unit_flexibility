@@ -1,0 +1,107 @@
+General parameters -----
+ - Time -----
+       fsamp: 1000
+       true_duration: 60
+       window_beginning_ignore: 1
+       window_end_ignore: 1
+       ISI_threshold_for_discontinuity: 0.4
+ - Neurons population -----
+       nb_pools: 1
+       nb_motoneurons_per_pool: 300
+       min_soma_diameter: 50 micrometers
+       max_soma_diameter: 100 micrometers
+       size_distribution_exponent: 2
+       nb_Renshaw_cells_per_pool: 60
+       total_nb_Ib_interneurons: 60
+   Factor_analysis_on_all_pools: True
+
+Input parameters -----
+   Common exitatory input -----
+       nb_excitatory_inputs_per_pool: 1
+       excitatory_input_baseline: 0.6
+       excitatory_inputs_std: 0.03
+       low_pass_filter_of_excitatory_input: 2.5
+       excitatory_input_source: load_experimental_data
+       excitatory_input_sourcefile_path: C:\Users\fdernoncourt\Documents\Simulation_input_files
+       excitatory_input_sourcefile_filename: \S2_VL_DEFr_input_for_simulation.mat
+       set_arbitrary_correlation_between_excitatory_inputs: False
+       within_pool_excitatory_input_correlation: 0
+       between_pool_excitatory_input_correlation: 0.7
+       distribution_of_excitation: heterogeneous_constant_sum_of_weights
+   Common inhibitory input -----
+       nb_inhibitory_inputs_per_pool: 0
+       inhibitory_input_mean: 0
+       inhibitory_input_std: 0.0
+       low_pass_filter_of_inhibitory_input: 2.5
+       distribution_of_inhibition: heterogeneous_random_sum_of_weights
+       set_arbitrary_correlation_between_inhibitory_and_excitatory_inputs: False
+       within_pool_excitatory_to_inhibitory_input_correlation: -0.5
+       between_pool_excitatory_to_inhibitory_input_correlation: 0.5
+   Independent noise (motor neurons) -----
+       low_pass_filter_of_MN_independent_noise: 50
+       MN_independent_noise_excit_std: 0.09
+       MN_independent_noise_inhib_std: 0.0
+       low_pass_filter_of_other_cell_types_independent_noise: 50
+   Independent noise (Renshaw cells and Ib interneurons) -----
+       RC_independent_noise_std: 3
+       Ib_interneruons_noise_std: 3
+
+Electrophysiological poperties -----
+   Common to all neurons -----
+       voltage_rest: 0. V
+       voltage_thresh: 10. mV
+   Motor neurons reversal/equilibrium potentials -----
+       E_leak: 0. V
+       E_excit: 25. mV
+       E_inhib: -15. mV
+   Constant and exponents to define electrophysiological properties of motor neurons (Caillet 2022) -----
+       tau_MN_constant: 26000.0
+       tau_MN_exponent: 1.5
+       resistance_constant: 960000.0
+       resistance_exponent: -2.4
+       membrane_conductance_scaling: 1
+       rheobase_constant: 0.0009000000000000001
+       rheobase_exponent: 2.5
+       rheobase_scaling: 100
+       capacitance_constant: 1.2
+       capacitance_exponent: 1
+       AHP_duration_constant: 25000.0
+       AHP_duration_exponent: -1.5
+       refractory_period_as_AHP_fraction: 0.2
+   Renshaw cells and Ib inhibitory interneurons -----
+       tau_Renshaw: 8. ms
+       refractory_period_RC: 10. ms
+       tau_Ib_interneurons: 8. ms
+       refractory_period_Ib_interneurons: 10. ms
+
+Muscle fibers mechanical poperties -----
+       fiber_force_rest: 0. V
+       force_twitch_rise_tau_baseline: 20. ms
+       force_decay_tau_baseline: 50. ms
+       force_baseline_conductance_scalar: 5. S
+       smallest_MU_tau_multiplier: 1.5
+       largest_MU_tau_multiplier: 0.75
+       smallest_MU_max_force: 1
+       largest_MU_max_force: 10
+       axonal_conduction_velocity_constant: 8.0
+       axonal_conduction_velocity_exponent: 0.7
+
+Connectivity (synaptic parameters) -----
+   Connectivity -----
+       MN_to_Renshaw_connectivity_probability_within_pool: 0.17
+       Renshaw_to_MN_connectivity_probability_within_pool: 0.4
+       MN_to_Renshaw_connectivity_probability_across_pool: 0
+       Renshaw_to_MN_connectivity_probability_across_pool: 0
+       MN_to_Renshaw_connectivity_prevent_heteronymous_pool_overlap: False
+       Renshaw_to_MN_connectivity_prevent_heteronymous_pool_overlap: False
+       Ib_inh_int_to_MN_connectivity_probability: 0.4
+       Ib_inh_int_to_MN_connectivity_gaussian_nonbinary_weights: False
+       Ib_inh_int_to_MN_connectivity_probability_std: 0.15
+   Post-synaptic effects -----
+       MN_to_Renshaw_excit: 3.3 mV
+       Renshaw_to_MN_inhib: 3. uS
+       MN_RC_synpatic_delay: 5. ms
+       MN_to_muscle_fiber_force: 6
+       force_to_Ib_excit: 0. V
+       Ib_to_MN_inhib: 0. S
+       Ib_to_MN_synaptic_delay: 10. ms
